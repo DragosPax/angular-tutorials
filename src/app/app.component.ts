@@ -7,12 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Angular';
-  val: string;
+  //val: string;
   notificare: string;
 
-  
   onNotify(val: string) {
-    console.log(val);
+    console.log("in parent", val);
     this.notificare = val;
   }
 }

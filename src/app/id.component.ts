@@ -16,12 +16,11 @@ export class GetDrink {
   getId() {
     const id = document.getElementById('input-one').value;
     this.service.getCocktail(id).subscribe((resp) => this.showCocktail(resp));
-    this.newDrinkEvent.emit(this.cocktail);
   }
   showCocktail(resp) {
     this.cocktail = resp.drinks[0].strDrink;
-    console.log(this.cocktail);
+    console.log("in id comp", this.cocktail);
     document.getElementById('cocktail').innerText = this.cocktail;
-    // this.notify.emit(this.cocktail);
+    this.newDrinkEvent.emit(this.cocktail);
   }
 }

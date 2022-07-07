@@ -20,12 +20,12 @@ export class Cocktail {
     private http: HttpClient,
     private cocktailService: CocktailService
   ) {}
-  getDrink() {
-    const response = this.cocktailService
-      .getCocktail()
-      .subscribe((resp) => this.showDrink(resp.drinks));
-  }
-  showDrink(value: CocktailModel[]) {
-    value.map((drink) => console.log(drink));
-  }
+  // getDrink() {
+  //   const response = this.cocktailService
+  //     .getCocktail()
+  //     .subscribe((resp) => this.showDrink(resp.drinks));
+  // }
+  // showDrink(value: CocktailModel[]) {
+  //   value.map((drink) => console.log(drink));
+  // }
 }
