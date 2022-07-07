@@ -9,6 +9,8 @@ export class AppComponent {
   name = 'Angular';
   val: string;
   notificare: string;
+
+  
   onNotify(val: string) {
     console.log(val);
     this.notificare = val;

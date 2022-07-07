@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CocktailService } from './cocktail.service';
 
 export class CocktailModel {
@@ -13,6 +13,9 @@ export class CocktailModel {
   templateUrl: './cocktail.component.html',
 })
 export class Cocktail {
+
+  @Input() val:string
+
   constructor(
     private http: HttpClient,
     private cocktailService: CocktailService

@@ -7,7 +7,7 @@ import { CocktailService } from './cocktail.service';
   templateUrl: './id.component.html',
 })
 export class GetDrink {
-  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
+  @Output() newDrinkEvent: EventEmitter<string> = new EventEmitter<string>();
 
   name = 'something';
   cocktail: string;
@@ -16,11 +16,12 @@ export class GetDrink {
   getId() {
     const id = document.getElementById('input-one').value;
     this.service.getCocktail(id).subscribe((resp) => this.showCocktail(resp));
-    this.notify.emit(this.cocktail);
+    this.newDrinkEvent.emit(this.cocktail);
   }
   showCocktail(resp) {
     this.cocktail = resp.drinks[0].strDrink;
     console.log(this.cocktail);
     document.getElementById('cocktail').innerText = this.cocktail;
+    // this.notify.emit(this.cocktail);
   }
 }

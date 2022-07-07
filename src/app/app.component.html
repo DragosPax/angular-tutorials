@@ -1,4 +1,7 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
-<id-component [drink]="val" (notify)="onNotify($event)"></id-component>
-<drink-component></drink-component>
+<id-component
+  [cocktail]="val"
+  (newDrinkEvent)="onNotify($event)"
+></id-component>
+<drink-component [val]="val"></drink-component>
