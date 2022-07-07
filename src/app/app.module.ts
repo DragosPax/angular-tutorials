@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { GetDrink } from './id.component';
 import { Cocktail } from './cocktail.component';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent,GetDrink,Cocktail ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [AppComponent, HelloComponent, GetDrink, Cocktail],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

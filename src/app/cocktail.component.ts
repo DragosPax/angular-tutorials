@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { CocktailService } from './cocktail.service';
 
 export class CocktailModel {
   strDrink: string;
@@ -9,17 +10,18 @@ export class CocktailModel {
 
 @Component({
   selector: 'drink-component',
-  template: './cocktail.component.html',
+  templateUrl: './cocktail.component.html',
 })
 export class Cocktail {
-  constructor(private http: HttpClient) {}
-
+  constructor(
+    private http: HttpClient,
+    private cocktailService: CocktailService
+  ) {}
   getDrink() {
-    const response = this.http
-      .get('www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007')
+    const response = this.cocktailService
+      .getCocktail()
       .subscribe((resp) => this.showDrink(resp.drinks));
   }
-
   showDrink(value: CocktailModel[]) {
     value.map((drink) => console.log(drink));
   }
