@@ -9,8 +9,7 @@ export class CocktailService {
   getCocktail(id: string): Observable<any> {
     const url =
       'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id;
-    console.log('id', url);
-    console.log(typeof url);
+
     return this.http.get(url);
   }
 }
